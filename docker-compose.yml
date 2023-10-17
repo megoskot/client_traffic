@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+  app_db:
+    container_name: app_db
+    restart: unless-stopped
+    image: mariadb:10.1
+    ports:
+      - '3706:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_USER: user
+      MYSQL_DATABASE: app
+      MYSQL_PASSWORD: pass
+    healthcheck:
+      test: "/usr/bin/mysql --user=user --password=pass --execute \"SHOW DATABASES;\""
+      interval: 10s
+      timeout: 250s
+      retries: 50
