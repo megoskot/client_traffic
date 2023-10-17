@@ -1,9 +1,9 @@
 # Учет трафика клиентов #
 
-### Установка###
+### Установка ###
 ```bash
-git clone 
-cd 
+git clone git@github.com:megoskot/client_traffic.git
+cd client_traffic
 sh install.sh
 ```
 Зауск комманды для инициализации данных в начале месяца:
